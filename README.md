@@ -25,8 +25,8 @@ Clone ESP8266_RTOS_SDK, e.g., to ~/ESP8266_RTOS_SDK.
 Modify gen_misc.sh or gen_misc.bat:
 For Linux:
 
-    $export SDK_PATH=~/ESP8266_RTOS_SDK
-    $export BIN_PATH=~/ESP8266_BIN
+    $export SDK_PATH=$(dirname $(pwd))
+    $export BIN_PATH=$(dirname $(pwd))/bin
 
 For Windows:
 
