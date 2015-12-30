@@ -1,0 +1,3 @@
+[submodule "esp8266-iot-platform"]
+	path = esp8266iot
+	url = https://github.com/lizhoujian/ESP8266_IOT_PLATFORM
