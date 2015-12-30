@@ -79,10 +79,20 @@ void ICACHE_FLASH_ATTR
 smartconfig_task(void *pvParameters)
 {
     smartconfig_start(smartconfig_done);
-    
+
+    while (true);
     vTaskDelete(NULL);
 }
 
+void ICACHE_FLASH_ATTR
+print_task(void *pvParameters)
+{
+    int i = 0;
+    while (true) {
+        vTaskDelay(1000 / portTICK_RATE_MS);
+        printf("delay %d\n", i++);
+    }
+}
 
 /******************************************************************************
  * FunctionName : user_init
@@ -98,6 +108,7 @@ user_init(void)
     /* need to set opmode before you set config */
     wifi_set_opmode(STATION_MODE);
 
-    xTaskCreate(smartconfig_task, "smartconfig_task", 256, NULL, 2, NULL);
+   //xTaskCreate(smartconfig_task, "smartconfig_task", 256, NULL, 2, NULL);
+   xTaskCreate(print_task, "print_task", 256, NULL, 3, NULL);
 }
 
