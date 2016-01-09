@@ -189,11 +189,12 @@ OIMAGES := $(GEN_IMAGES:%=$(IMAGEODIR)/%)
 BINODIR := $(ODIR)/$(TARGET)/$(FLAVOR)/bin
 OBINS := $(GEN_BINS:%=$(BINODIR)/%)
 
+##	-Werror			\
+
 CCFLAGS += 			\
 	-g			\
 	-Wpointer-arith		\
 	-Wundef			\
-	-Werror			\
 	-Wl,-EL			\
 	-fno-inline-functions	\
 	-nostdlib       \
